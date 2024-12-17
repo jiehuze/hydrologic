@@ -77,22 +77,22 @@ void YLogger::update_log_file_sink() {
 }
 
 
-// 提供日志记录接口
-void YLogger::info(const std::string &message) {
-    spdlog::info(message);
-}
+// // 提供日志记录接口
+// void YLogger::info(const std::string &message) {
+//     spdlog::info(message);
+// }
 
-void YLogger::warn(const std::string &message) {
-    spdlog::warn(message);
-}
+// void YLogger::warn(const std::string &message) {
+//     spdlog::warn(message);
+// }
 
-void YLogger::error(const std::string &message) {
-    spdlog::error(message);
-}
+// void YLogger::error(const std::string &message) {
+//     spdlog::error(message);
+// }
 
-void YLogger::debug(const std::string &message) {
-    spdlog::debug(message);
-}
+// void YLogger::debug(const std::string &message) {
+//     spdlog::debug(message);
+// }
 
 // 全局日志实例定义
 YLogger ylog("logs/", "[%Y-%m-%d %H:%M:%S.%e] [%l] %v", spdlog::level::info);

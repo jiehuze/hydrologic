@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
     ylog.set_log_config(spdlog::level::debug, "/Users/jiehu/works/test/logs/");
     MainWindow w;
     w.show();
-
+    // ylog.set_log_config(spdlog::level::debug, "/Users/jiehu/works/test/logs/");
     ylog.info("This is an info log");
     ylog.warn("This is a warning log");
     ylog.error("This is an error log");
@@ -21,5 +21,6 @@ int main(int argc, char *argv[])
     ylog.error("set_log_config is an error log");
     ylog.debug("set_log_config is an debug log");
 
+    qDebug() << "ylog addr: " << &ylog;
     return a.exec();
 }

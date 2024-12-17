@@ -19,10 +19,40 @@ public:
     void set_log_config(spdlog::level::level_enum log_level, const std::string &log_dir);
 
     // 提供日志记录接口
-    void info(const std::string &message);
-    void warn(const std::string &message);
-    void error(const std::string &message);
-    void debug(const std::string &message);
+    template <typename T>
+    inline void info(const T &msg){
+        spdlog::info(msg);
+    }
+    template <typename T>
+    inline void warn(const T &msg){
+        spdlog::warn(msg);
+    }
+    template <typename T>
+    inline void error(const T &msg){
+        spdlog::error(msg);
+    }
+    template <typename T>
+    inline void debug(const T &msg){
+        spdlog::debug(msg);
+    }
+
+    template <typename... Args>
+    inline void info(spdlog::format_string_t<Args...> fmt, Args &&...args){
+        spdlog::info(fmt, std::forward<Args>(args)...);
+    }
+    template <typename... Args>
+    inline void warn(spdlog::format_string_t<Args...> fmt, Args &&...args){
+        spdlog::warn(fmt, std::forward<Args>(args)...);
+    }
+    template <typename... Args>
+    inline void error(spdlog::format_string_t<Args...> fmt, Args &&...args){
+        spdlog::error(fmt, std::forward<Args>(args)...);
+    }
+    template <typename... Args>
+    inline void debug(spdlog::format_string_t<Args...> fmt, Args &&...args){
+        spdlog::debug(fmt, std::forward<Args>(args)...);
+    }
+
 
 private:
     // 获取当前日期并生成文件名
