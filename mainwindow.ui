@@ -14,30 +14,116 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QTreeView" name="treeView">
+   <widget class="QPushButton" name="bt_connect">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>80</x>
       <y>30</y>
-      <width>121</width>
-      <height>611</height>
+      <width>231</width>
+      <height>61</height>
      </rect>
+    </property>
+    <property name="text">
+     <string>connect</string>
     </property>
    </widget>
-   <widget class="QStackedWidget" name="stackedWidget">
+   <widget class="QWidget" name="widget" native="true">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>30</y>
-      <width>791</width>
-      <height>611</height>
+      <x>480</x>
+      <y>160</y>
+      <width>481</width>
+      <height>451</height>
      </rect>
     </property>
-    <property name="currentIndex">
-     <number>1</number>
+    <widget class="QLineEdit" name="lineEdit_write">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>50</y>
+       <width>261</width>
+       <height>101</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="bt_write">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>170</y>
+       <width>261</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>写入serial port</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>10</y>
+       <width>67</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>写入数据：</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="bt_write_modbus">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>260</y>
+       <width>261</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>写入modbus</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="widget_2" native="true">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>160</y>
+      <width>421</width>
+      <height>451</height>
+     </rect>
     </property>
-    <widget class="QWidget" name="page"/>
-    <widget class="QWidget" name="page_2"/>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>12</x>
+       <y>12</y>
+       <width>67</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>读取数据：</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_read">
+     <property name="geometry">
+      <rect>
+       <x>12</x>
+       <y>36</y>
+       <width>371</width>
+       <height>381</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+     </property>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -49,7 +135,31 @@
      <height>24</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menudevice">
+    <property name="title">
+     <string>device</string>
+    </property>
+    <addaction name="actionconnect"/>
+    <addaction name="actiondisconnect"/>
+    <addaction name="actionsetting"/>
+   </widget>
+   <addaction name="menudevice"/>
   </widget>
+  <action name="actionconnect">
+   <property name="text">
+    <string>connect</string>
+   </property>
+  </action>
+  <action name="actiondisconnect">
+   <property name="text">
+    <string>disconnect</string>
+   </property>
+  </action>
+  <action name="actionsetting">
+   <property name="text">
+    <string>setting</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>
